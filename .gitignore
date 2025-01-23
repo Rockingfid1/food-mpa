@@ -39,3 +39,5 @@ next-env.d.ts
 rootkey.csv
 
 initdb.js
+# Million Lint
+.million
