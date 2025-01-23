@@ -26,6 +26,8 @@ export default async function MealDetailsPage({ params }) {
   }
 
   meal.instructions = meal.instructions.replace(/\n/g, "<br />");
+  if (meal.instructions.includes("+"))
+    meal.instructions = meal.instructions.replaceAll("+", "<br />");
 
   return (
     <>
@@ -35,6 +37,7 @@ export default async function MealDetailsPage({ params }) {
             src={`https://michaelokoye-nextjs-demo-users-image.s3.amazonaws.com/${meal.image}`}
             fill
             alt={meal.title}
+            sizes="100%"
           />
         </div>
         <div className={classes.headerText}>
